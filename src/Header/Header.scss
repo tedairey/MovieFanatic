@@ -1,0 +1,76 @@
+.App-header {
+    background-color: #bb1d12;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    h1 {
+        text-align: center;
+        margin: 0px;
+        padding: 10px 0px;
+        position: relative;
+    }
+    .empty-button {
+        display: none;
+    }
+    .header-nav {
+        background-color: #141d52;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        padding: 10px 0px;
+        .nav-button {
+            flex-basis: 150px;
+            font-size: 1.125rem;
+            padding: 4px 8px;
+            border-radius: 5px;
+            border: 2px solid #fff;
+            background-color: transparent;
+            color: #fff;
+            transition: all 0.3s;
+            white-space: nowrap;
+            text-overflow: hidden;
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.3);
+            }
+            & + .nav-button {
+                margin-left: 10px
+            }
+        }
+    }
+    @media (max-width: 991px) {
+        .header-nav {
+            position: fixed;
+            width: 0px;
+            height: 100vh;
+            transition: width 0.3s;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1;
+            display: block;
+            overflow: hidden;
+            .nav-button {
+                font-size: 24px;
+                display: block;
+                width: calc(100% - 20px);
+                margin: 0px 10px;
+                padding: 10px;
+                border: none;
+                text-align: left;
+                & + .nav-button {
+                    margin-top: 10px;
+                }
+            }
+            &.open {
+                width: 100%;
+            }
+        }
+        .empty-button {
+            display: block;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 20px;
+            background-color: transparent;
+            border: none;
+            color: #fff;
+        }
+    }
+}

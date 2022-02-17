@@ -1,0 +1,42 @@
+main {
+    padding: 25px;
+}
+
+.movie-description-card {
+    border: 2px solid #0071b6;
+    border-radius: 5px;
+    display: flex;
+    background-color: #f0f0f0;
+    .poster-wrapper {
+        line-height: 0;
+        img {
+            width: 100%
+        }
+    }
+    .right-column {
+        padding: 15px;
+        font-size: 1.25rem;
+        .movie-header {
+            margin: 0px 0px 15px;
+            color: #bb1d12;
+            font-size: 1.75rem;
+            text-align: center;
+            font-weight: 500;
+        }
+        ul {
+            font-style: oblique;
+        }
+        .cast-list {
+            display: flex;
+            gap: 1em;
+            width: 490px;
+            overflow-x: scroll;
+            li {
+                display: inline-block;
+                .actor-image {
+                    width: 200px
+                }
+            }
+        }
+    }
+}

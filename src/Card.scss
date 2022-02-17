@@ -1,0 +1,39 @@
+.card {
+    overflow: hidden;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    .poster-wrapper {
+        position: relative;
+        display: block;
+        line-height: 0;
+    }
+    img {
+        width: 100%;
+    }
+    .movie-title {
+        display: block;
+        text-align: center;
+        font-size: 1.25rem;
+        padding: 5px 2px;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    .movie-description {
+        display: block;
+        line-height: 1.2;
+        opacity: 0;
+        transition: opacity 0.3s;
+        position: absolute;
+        top: 0px;
+        bottom: 0px;
+        padding: 3px 5px;
+        color: #fff;
+        background-color: rgba(0,0,0,0.7);
+        font-size: 18px;
+    }
+    &:hover .movie-description {
+        opacity: 1;
+    }
+}
