@@ -21,7 +21,7 @@ const MoviePage = (props) => {
             })
         getMovieCast(movie.id)
             .then(res => {
-                const movieCast = res.data.cast.slice(1, 11);
+                const movieCast = res.data.cast.slice(0, 11);
                 let reqArray = [];
                 for (let actor of movieCast) {
                     reqArray.push(getActor(actor.id))
