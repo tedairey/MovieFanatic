@@ -1,7 +1,5 @@
 import axios from "axios"
-
-const base_url = 'https://api.themoviedb.org/3'
-const api_key = 'a2742f14ae976047c5cfccd1b8fa2bf0'
+import { base_url, api_key } from "../Config"
 
 export const getMovieById = (id) => {
     const url = `${base_url}/movie/${id}?api_key=${api_key}`
