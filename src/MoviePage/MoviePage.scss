@@ -9,13 +9,16 @@ main {
     background-color: #f0f0f0;
     .poster-wrapper {
         line-height: 0;
+        height: calc(100vh - 12rem);
         img {
-            width: 100%
+            height: 100%
         }
     }
     .right-column {
         padding: 15px;
         font-size: 1.25rem;
+        width: 100%;
+        overflow: hidden;
         .movie-header {
             margin: 0px 0px 15px;
             color: #bb1d12;
@@ -29,7 +32,6 @@ main {
         .cast-list {
             display: flex;
             gap: 1em;
-            width: 490px;
             overflow-x: scroll;
             li {
                 display: inline-block;

@@ -89,18 +89,18 @@ const MoviePage = (props) => {
                         <h3 className='movie-header'>{movie.original_title || movie.name}</h3>
                         <p className='movie-description'>{movie.overview}</p>
                         <ul className='no-style-list'>
-                            <li>
+                            <li key={'genre'}>
                                 Genre: {movie.genres && movie.genres.reduce((currentStr, genre) => {
                                     return `${currentStr}${currentStr ? ', ' : ''}${genre.name}`
                                 }, '')}
                             </li>
-                            <li>
+                            <li key={'release-date'}>
                                 Release Date: {moment(movie.release_date).format('M/D/YY')}
                             </li>
-                            <li>
+                            <li key={'runtime'}>
                                 Runtime: {moment(movie.runtime, 'mmm').format('h[h] m[m] s[s]')}
                             </li>
-                            <li className='rating-item'>
+                            <li key={'rating'} className='rating-item'>
                                 <label>Average Rating:</label>
                                 <div>
                                     {getStars(movie.vote_average)}
@@ -116,7 +116,7 @@ const MoviePage = (props) => {
                                     <img
                                         className='actor-image'
                                         src={`https://image.tmdb.org/t/p/original/${el.profile_path}`} 
-                                        alt={`Image of ${el.name}`}
+                                        alt={`${el.name}`}
                                     />
                                     <div>
                                         <label className='actor-name'>{el.name}</label>
