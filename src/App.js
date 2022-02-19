@@ -6,6 +6,7 @@ import './App.scss';
 import Header from './Header/Header';
 import HomePage from './HomePage';
 import MoviePage from './MoviePage/MoviePage';
+import UpcomingMovies from './UpcomingMovies';
 
 function App() {
 
@@ -15,7 +16,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<HomePage />} />
         <Route exact path="/actors" element={<Actors />} />
-        <Route exact path="/new-releases" element={<MoviePage />} />
+        <Route exact path="/upcoming" element={<UpcomingMovies />} />
         <Route path="/movie/:id" element={<MoviePage />} />
         <Route path="/person/:id" element={<ActorPage />} />
       </Routes>

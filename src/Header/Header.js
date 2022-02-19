@@ -17,9 +17,9 @@ const Header = () => {
         navigate("/actors")
     }
     
-    const goToNewReleases = () => {
+    const goToUpcoming = () => {
         setSideMenuOpen(false)
-        navigate("/new-releases")
+        navigate("/upcoming")
     }
 
     return (
@@ -36,8 +36,8 @@ const Header = () => {
                 <button className='nav-button' onClick={goHome}>
                     Home
                 </button>
-                <button className='nav-button' onClick={goToNewReleases}>
-                    New Releases
+                <button className='nav-button' onClick={goToUpcoming}>
+                    Upcoming
                 </button>
                 <button className='nav-button' onClick={goToActors}>
                     Actors

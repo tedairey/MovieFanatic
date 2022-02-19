@@ -39,3 +39,16 @@ export const getTrendingMovies = () => {
 
 	return axios(settings);
 }
+
+export const getLatestMovies = () => {
+    const url = `${base_url}/movie/upcoming?api_key=${api_key}`
+
+    const settings = {
+		async: true,
+		crossDomain: true,
+		url,
+		method: 'GET',
+	}
+
+	return axios(settings);
+}
