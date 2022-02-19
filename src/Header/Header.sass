@@ -1,0 +1,69 @@
+.app-header
+    font-size: calc(10px + 2vmin)
+    color: white
+    .app-title
+        background-color: #222
+        text-align: center
+        margin: 0px
+        padding: 10px 0px
+        position: relative
+    .empty-button
+        display: none
+    .header-nav
+        background-color: #bb1d12d6
+        display: flex
+        width: 100%
+        justify-content: center
+        padding: 10px 0px
+        .nav-button
+            flex-basis: 150px
+            font-size: 1.125rem
+            padding: 6px 10px
+            border-radius: 5px
+            border: none
+            background-color: #fff
+            color: #bb1d12
+            font-weight: 600
+            transition: all 0.3s
+            white-space: nowrap
+            text-overflow: hidden
+            &:hover
+                background-color: #ddd
+            & + .nav-button
+                margin-left: 10px
+    @media (max-width: 991px)
+        .header-nav
+            position: fixed
+            width: 0px
+            height: 100vh
+            transition: width 0.3s
+            background-color: rgba(0, 0, 0, 0.8)
+            z-index: 1
+            display: block
+            overflow: hidden
+            .nav-button
+                font-size: 24px
+                display: block
+                width: calc(100% - 20px)
+                background-color: transparent
+                color: #fff
+                margin: 0px 10px
+                padding: 10px
+                border: none
+                text-align: left
+                font-weight: normal
+                &:hover
+                    background-color: rgba(255, 255, 255, 0.3)
+                & + .nav-button
+                    margin-top: 10px
+            &.open
+                width: 100%
+        .empty-button
+            display: block
+            position: absolute
+            top: 50%
+            transform: translateY(-50%)
+            left: 20px
+            background-color: transparent
+            border: none
+            color: #fff

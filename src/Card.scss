@@ -29,7 +29,7 @@
             display: block;
             text-align: center;
             cursor: pointer;
-            font-size: 1.25rem;
+            font-size: 1.5rem;
             padding: 5px 2px;
             font-style: none;
         }
@@ -77,6 +77,14 @@
         height: 100%;
         .movie-description .movie-overview {
             -webkit-line-clamp: 10;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .card {
+        .actor-name {
+            font-size: 1.5rem;
         }
     }
 }

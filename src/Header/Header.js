@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import './Header.scss'
+import './Header.sass'
 
 const Header = () => {
 
@@ -16,10 +16,15 @@ const Header = () => {
         setSideMenuOpen(false)
         navigate("/actors")
     }
+    
+    const goToNewReleases = () => {
+        setSideMenuOpen(false)
+        navigate("/new-releases")
+    }
 
     return (
-        <header className="App-header">
-            <h1>
+        <header className="app-header">
+            <h1 className='app-title'>
                 <button className="empty-button" onClick={() => setSideMenuOpen(!sideMenuOpen)}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor" className="bi bi-list" viewBox="0 0 16 16">
                         <path fillRule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
@@ -31,14 +36,11 @@ const Header = () => {
                 <button className='nav-button' onClick={goHome}>
                     Home
                 </button>
-                <button className='nav-button'>
-                    Your Movies
+                <button className='nav-button' onClick={goToNewReleases}>
+                    New Releases
                 </button>
                 <button className='nav-button' onClick={goToActors}>
                     Actors
-                </button>
-                <button className='nav-button'>
-                    New Releases
                 </button>
             </nav>
         </header>
