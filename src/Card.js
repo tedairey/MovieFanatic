@@ -8,9 +8,9 @@ const Card = (props) => {
 
     return (
         <div className="card">
-          <Link className="poster-wrapper" to={`movie/${movie.id}`} state={{ movie }}>
+          <Link className="poster-wrapper" to={`/movie/${movie.id}`} state={{ movie }}>
             <img 
-              src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} 
+              src={movie.poster_path ? `https://image.tmdb.org/t/p/original/${movie.poster_path}` : ''} 
               alt={`${movie.original_title} poster`}
             />
             <template className='movie-description'>

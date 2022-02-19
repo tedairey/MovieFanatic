@@ -19,6 +19,9 @@ main {
         font-size: 1.25rem;
         width: 100%;
         overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         .movie-header {
             margin: 0px 0px 15px;
             color: #bb1d12;
@@ -29,14 +32,28 @@ main {
         ul {
             font-style: oblique;
         }
-        .cast-list {
-            display: flex;
-            gap: 1em;
+        .cast-list-wrapper {
             overflow-x: scroll;
-            li {
-                display: inline-block;
-                .actor-image {
-                    width: 200px
+            .cast-list {
+                display: flex;
+                gap: 1em;
+                .poster-wrapper {
+                    height: 100%
+                }
+                li {
+                    display: inline-block;
+                    .actor-link {
+                        display: block;
+                        text-decoration: none;
+                    }
+                    .card, .actor-image {
+                        width: 200px;
+                        height: 100%
+                    }
+                    .actor-name {
+                        color: #333;
+                        text-decoration: none;
+                    }
                 }
             }
         }

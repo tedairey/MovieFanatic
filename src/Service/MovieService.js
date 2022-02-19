@@ -1,8 +1,8 @@
 import axios from "axios"
 import { base_url, api_key } from "../Config"
 
-export const getMovieById = (id) => {
-    const url = `${base_url}/movie/${id}?api_key=${api_key}`
+export const getMovieById = (id, type) => {
+    const url = `${base_url}/${type}/${id}?api_key=${api_key}`
 
     const settings = {
 		async: true,
@@ -14,21 +14,8 @@ export const getMovieById = (id) => {
 	return axios(settings);
 }
 
-export const getMovieCast = (id) => {
-	const url = `${base_url}/movie/${id}/credits?api_key=${api_key}`
-
-	const settings = {
-		async: true,
-		crossDomain: true,
-		url,
-		method: 'GET',
-	}
-
-	return axios(settings);
-}
-
-export const getActor = (id) => {
-	const url = `${base_url}/person/${id}?api_key=${api_key}`
+export const getMovieCast = (id, type) => {
+	const url = `${base_url}/${type}/${id}/credits?api_key=${api_key}`
 
 	const settings = {
 		async: true,
