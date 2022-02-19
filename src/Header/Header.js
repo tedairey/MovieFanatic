@@ -12,6 +12,11 @@ const Header = () => {
         navigate("/");
     }
 
+    const goToActors = () => {
+        setSideMenuOpen(false)
+        navigate("/actors")
+    }
+
     return (
         <header className="App-header">
             <h1>
@@ -29,8 +34,8 @@ const Header = () => {
                 <button className='nav-button'>
                     Your Movies
                 </button>
-                <button className='nav-button'>
-                    Profiles
+                <button className='nav-button' onClick={goToActors}>
+                    Actors
                 </button>
                 <button className='nav-button'>
                     New Releases

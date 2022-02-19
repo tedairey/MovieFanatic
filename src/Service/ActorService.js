@@ -14,6 +14,19 @@ export const getActor = (id) => {
     return axios(settings);
 }
 
+export const getTredingActors = () => {
+    const url = `${base_url}/person/popular?api_key=${api_key}`
+
+    const settings = {
+        async: true,
+        crossDomain: true,
+        url,
+        method: 'GET',
+    }
+
+    return axios(settings);
+}
+
 export const getMovieCredits = (id) => {
     const url = `${base_url}/person/${id}/combined_credits?api_key=${api_key}`
 

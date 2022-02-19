@@ -1,0 +1,59 @@
+main
+    padding: 25px
+.description-card
+    border-radius: 5px
+    background-color: #f0f0f0
+    overflow: hidden
+    .poster-wrapper
+        line-height: 0
+        height: calc(100vh - 12rem)
+        text-align: center
+        background-color: #000
+        img
+            height: 100%
+    .right-column
+        padding: 15px
+        font-size: 1.25rem
+        width: 100%
+        overflow: hidden
+        display: flex
+        gap: 1em
+        flex-direction: column
+        justify-content: space-between
+        .movie-header
+            margin: 0px 0px 15px
+            color: #bb1d12
+            font-size: 1.75rem
+            text-align: center
+            font-weight: 500
+        .movie-tagline
+            margin: -10px 2px
+            line-height: 1
+            font-size: 1.125rem
+            font-style: oblique
+            font-weight: normal
+            color: #555
+            text-align: center
+        .bio-list
+            font-style: oblique
+        .stars-wrapper
+            color: #bb1d12
+            vertical-align: middle
+            margin-left: 5px
+        .cast-list-wrapper
+            overflow-x: scroll
+            .cast-list
+                display: flex
+                gap: 1em
+                .poster-wrapper
+                    height: 100%
+                li
+                    display: inline-block
+    @media (min-width: 992px)
+        display: flex
+        .right-column .movie-description
+            display: -webkit-box
+            -webkit-line-clamp: 10
+            -webkit-box-orient: vertical
+            overflow: hidden
+            text-overflow: ellipsis

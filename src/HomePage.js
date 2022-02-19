@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './App.scss';
-import Card from './Card';
+import MovieCard from './MovieCard';
 import { getTrendingMovies } from './Service/MovieService';
 
-function HomePage() {
+const HomePage = () => {
 
   const [movies, setMovies] = useState([]);
 
@@ -20,7 +20,7 @@ function HomePage() {
   return (
     <section className='card-wrapper'>
     {movies.map(movie => 
-        <Card movie={movie} key={movie.id}/>
+        <MovieCard movie={movie} key={movie.id}/>
     )}
     </section>
   );

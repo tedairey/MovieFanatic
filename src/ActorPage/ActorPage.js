@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom';
 import { getActor, getMovieCredits } from '../Service/ActorService';
-import Card from '../Card';
+import MovieCard from '../MovieCard';
 import moment from 'moment';
 import './ActorPage.sass'
 
@@ -30,7 +30,7 @@ const ActorPage = (props) => {
 
     return (
         <main>
-            <div className="movie-description-card">
+            <div className="description-card">
                 <div className="poster-wrapper">
                     <img 
                         src={`https://image.tmdb.org/t/p/original/${person.profile_path}`} 
@@ -41,10 +41,17 @@ const ActorPage = (props) => {
                     <div className='description-wrapper'>
                         <h3 className='movie-header'>{person.original_title || person.name}</h3>
                         <p className='movie-description'>{person.biography || "No Bio Available"}</p>
-                        <ul className='no-style-list'>
-                            <li key={'born'} className='rating-item'>
-                                Born: {moment(person.birthday).format('MMM Do, YYYY')}
-                            </li>
+                        <ul className='no-style-list bio-list'>
+                            {person.birthday &&
+                                <li key={'born'} className='rating-item'>
+                                    Born: {moment(person.birthday).format('MMMM Do, YYYY')}
+                                </li>
+                            }
+                            {person.place_of_birth &&
+                                <li key={'birth-place'} className='rating-item'>
+                                    From: {person.place_of_birth}
+                                </li>
+                            }
                         </ul>
                     </div>
                     <div>
@@ -53,7 +60,7 @@ const ActorPage = (props) => {
                             <ul className='no-style-list cast-list'>
                                 {actingCredits.map(movie => {
                                     return <li key={movie.id}>
-                                        <Card
+                                        <MovieCard
                                             movie={movie}
                                         />
                                     </li>

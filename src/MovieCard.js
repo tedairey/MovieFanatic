@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import './Card.scss'
 
-const Card = (props) => {
+const MovieCard = (props) => {
 
     const { movie } = props;
 
@@ -15,11 +15,11 @@ const Card = (props) => {
             />
             <template className='movie-description'>
               <label className='movie-title'>{movie.original_title || movie.name}</label>
-              <p>{movie.overview}</p>
+              <p className='movie-overview'>{movie.overview}</p>
             </template>
           </Link>
         </div>
     )
 }
 
-export default Card;
+export default MovieCard;
