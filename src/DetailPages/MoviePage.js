@@ -2,10 +2,10 @@ import _ from 'lodash';
 import moment from 'moment';
 import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom';
-import ActorCard from '../ActorCard';
+import ActorCard from '../Cards/ActorCard';
 import { getActor } from '../Service/ActorService';
 import { getMovieById, getMovieCast } from '../Service/MovieService';
-import './MoviePage.sass'
+import './DetailPage.sass'
 
 const MoviePage = () => {
 
@@ -124,8 +124,8 @@ const MoviePage = () => {
                     </div>
                     <div>
                         <h3 className='movie-header'>Cast</h3>
-                        <div className='cast-list-wrapper'>
-                            <ul className='no-style-list cast-list'>
+                        <div className='poster-list-wrapper'>
+                            <ul className='no-style-list poster-list'>
                                 {cast.map(person => {
                                     return <li key={person.id}>
                                         <ActorCard 

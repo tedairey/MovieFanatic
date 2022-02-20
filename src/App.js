@@ -1,12 +1,12 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import ActorPage from './ActorPage/ActorPage';
-import Actors from './Actors';
-import './App.scss';
+import './App.sass';
 import Header from './Header/Header';
-import HomePage from './HomePage';
-import MoviePage from './MoviePage/MoviePage';
-import UpcomingMovies from './UpcomingMovies';
+import HomePage from './MainPages/HomePage';
+import UpcomingMovies from './MainPages/UpcomingMovies';
+import Actors from './MainPages/Actors';
+import MoviePage from './DetailPages/MoviePage';
+import ActorPage from './DetailPages/ActorPage';
 
 function App() {
 

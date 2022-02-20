@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom';
 import { getActor, getMovieCredits } from '../Service/ActorService';
-import MovieCard from '../MovieCard';
+import MovieCard from '../Cards/MovieCard';
 import moment from 'moment';
-import './ActorPage.sass'
+import './DetailPage.sass'
 
 const ActorPage = (props) => {
 
@@ -40,7 +40,7 @@ const ActorPage = (props) => {
                 <div className='right-column'>
                     <div className='description-wrapper'>
                         <h3 className='movie-header'>{person.original_title || person.name}</h3>
-                        <p className='movie-description'>{person.biography || "No Bio Available"}</p>
+                        <p className='movie-description'>{person.biography ? person.biography.replaceAll('&amp;', '&') : "No Bio Available"}</p>
                         <ul className='no-style-list bio-list'>
                             {person.birthday &&
                                 <li key={'born'} className='rating-item'>
@@ -56,8 +56,8 @@ const ActorPage = (props) => {
                     </div>
                     <div>
                         <h3 className='movie-header'>Known For</h3>
-                        <div className='cast-list-wrapper'>
-                            <ul className='no-style-list cast-list'>
+                        <div className='poster-list-wrapper'>
+                            <ul className='no-style-list poster-list'>
                                 {actingCredits.map(movie => {
                                     return <li key={movie.id}>
                                         <MovieCard

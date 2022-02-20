@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import ActorCard from './ActorCard';
-import './App.scss';
-import { getTredingActors } from './Service/ActorService';
+import ActorCard from '../Cards/ActorCard';
+import { getTredingActors } from '../Service/ActorService';
 
 const Actors = () => {
 

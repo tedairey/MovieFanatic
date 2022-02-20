@@ -1,0 +1,87 @@
+.card
+    overflow: hidden
+    border-radius: 5px
+    border: 1px solid #ccc
+    text-decoration: none
+    cursor: pointer
+    .poster-wrapper
+        position: relative
+        display: block
+        line-height: 0
+        text-decoration: none
+        .no-poster-wrapper
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+            padding-top: 20px
+            .no-poster-title
+                color: #fff
+                text-overflow: ellipsis
+                line-height: 1
+                display: -webkit-box
+                -webkit-line-clamp: 3
+                -webkit-box-orient: vertical
+                overflow: hidden
+                text-overflow: ellipsis
+    img
+        width: 100%
+    .movie-description
+        display: block
+        text-align: left
+        line-height: 1.2
+        opacity: 0
+        transition: opacity 0.3s
+        position: absolute
+        top: 0px
+        bottom: 0px
+        padding: 3px 5px
+        color: #fff
+        background-color: rgba(0,0,0,0.7)
+        font-size: 18px
+        .movie-title
+            display: block
+            text-align: center
+            cursor: pointer
+            font-size: 1.5rem
+            padding: 5px 2px
+            font-style: none
+        .movie-overview
+            margin-top: 0px
+            display: -webkit-box
+            -webkit-line-clamp: 14
+            -webkit-box-orient: vertical
+            overflow: hidden
+            text-overflow: ellipsis
+    &:hover
+        .movie-description
+            opacity: 1
+        .actor-name
+            font-weight: 500
+    .actor-link
+        display: block
+        text-decoration: none
+        text-align: center
+        line-height: 0
+    .actor-name
+        color: #333
+        text-decoration: none
+        display: block
+        padding: 5px
+        background-color: #fff
+        line-height: 1
+        cursor: pointer
+        white-space: nowrap
+        overflow: hidden
+        text-overflow: ellipsis
+
+.description-card
+    .card
+        width: 200px
+        height: 100%
+        .movie-description .movie-overview
+            -webkit-line-clamp: 10
+
+@media (min-width: 768px)
+    .card
+        .actor-name
+            font-size: 1.5rem

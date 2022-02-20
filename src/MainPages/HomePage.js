@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import './App.scss';
-import MovieCard from './MovieCard';
-import { getLatestMovies } from './Service/MovieService';
+import MovieCard from '../Cards/MovieCard';
+import { getTrendingMovies } from '../Service/MovieService';
 
-const UpcomingMovies = () => {
+const HomePage = () => {
 
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    getLatestMovies()
+    getTrendingMovies()
       .then(res => {
         setMovies(res.data.results);
       })
@@ -26,4 +25,4 @@ const UpcomingMovies = () => {
   );
 }
 
-export default UpcomingMovies;
+export default HomePage;
