@@ -14,14 +14,14 @@ const MoviePage = () => {
     const [cast, setCast] = useState([]); 
 
     useEffect(() => {
-        getMovieById(movie.id, movie.media_type)
+        getMovieById(movie.id, movie.media_type || 'movie')
             .then(res => {
                 setMovie(res.data)
             })
             .catch(err => {
                 console.log(err);
             })
-        getMovieCast(movie.id, movie.media_type)
+        getMovieCast(movie.id, movie.media_type || 'movie')
             .then(res => {
                 const movieCast = res.data.cast.slice(0, 11);
                 let reqArray = [];
